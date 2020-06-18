@@ -1,8 +1,15 @@
 {
-  "name": "typescript-template",
-  "version": "1.0.0",
+  "name": "node-install-peers",
+  "version": "0.0.1",
   "description": "",
+  "types": "dist/index.d.ts",
   "main": "dist/index.js",
+  "bin": {
+    "nip": "dist/bin/index.js"
+  },
+  "files": [
+    "dist/!(test)"
+  ],
   "scripts": {
     "start": "node dist",
     "test": "TS_NODE_FILES=true mocha -r ts-node/register -r source-map-support/register 'src/test/unit/**/*.test.ts' --exit",
@@ -20,23 +27,29 @@
   "author": "Cherednichenko Nikita",
   "license": "ISC",
   "devDependencies": {
-    "@types/chai": "^4.2.7",
+    "@types/chai": "^4.2.11",
     "@types/config": "0.0.36",
     "@types/mocha": "^7.0.2",
     "@types/node": "^12.12.24",
+    "@types/npm": "^2.0.31",
+    "@types/yargs": "^15.0.5",
     "chai": "^4.2.0",
-    "husky": "^4.0.10",
-    "mocha": "^7.0.0",
-    "nyc": "^15.0.0",
-    "prettier": "^1.19.1",
+    "husky": "^4.2.3",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.1",
+    "prettier": "^2.0.4",
     "pretty-quick": "^2.0.1",
     "source-map-support": "^0.5.16",
-    "ts-node": "^8.6.2",
-    "tslint": "^6.0.0",
-    "typescript": "^3.7.4"
+    "ts-node": "^8.8.2",
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
-    "config": "^3.2.4"
+    "@conform/batch.services": "^3.1.1",
+    "yargs": "^15.3.1"
+  },
+  "peerDependencies": {
+    "express": "4.x"
   },
   "husky": {
     "hooks": {
